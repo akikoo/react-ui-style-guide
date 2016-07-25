@@ -1,0 +1,32 @@
+.style-guide-block {
+  position: relative;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  padding: 10px 20px 10px;
+  margin: 40px 30px 0 1px;
+
+  &__description {
+    > h2 {
+      color: red;
+    }
+  }
+
+  pre {
+    font-size: 1em;
+  }
+
+  &__modifier {
+    color: grey;
+  }
+
+  &__display {
+
+  }
+
+  &__source {
+    pre {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+  }
+}
