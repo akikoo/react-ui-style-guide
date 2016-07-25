@@ -29,7 +29,7 @@ Card.propTypes = {
   title: React.PropTypes.string
 };
 
-StyleGuideBlock.defaultProps = {
+Card.defaultProps = {
 
 };
 
