@@ -22,14 +22,17 @@ Open [http://localhost:3001](http://localhost:3001) in a browser. `./src/main.js
 
 Define each component you want to include in your style guide `components` array in `./src/main.js`, like so:
 
-	const components = [
-		{
-    		component: require('./components/Card/Card'),
-    		name: 'Card',
-    		description: require('./components/Card/README.md'),
-    		props: {
-      			title: "Card title"
-    		},
-    		modifiers: []
-  		}
-	];
+```javascript
+const components = [
+  {
+    component: require('./components/Card/Card'),
+    name: 'Card',
+    description: require('./components/Card/README.md'),
+    props: {
+      title: "Card title",
+      text: "I am a very simple card."
+    },
+    modifiers: []
+  }
+];
+```
