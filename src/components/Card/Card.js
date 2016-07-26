@@ -10,14 +10,14 @@ class Card extends React.Component {
   render() {
     let classes = classNames(
       'card',
-      this.props.modifier
+      this.props.modifiers
     );
 
     return (
       <div className={classes}>
         <h3 className="card__title">{this.props.title}</h3>
         <div className="card__content">
-          <p>I am a very simple card.</p>
+          <p>{this.props.text}</p>
         </div>
       </div>
     );
@@ -25,12 +25,11 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-  modifierClass: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array]),
-  title: React.PropTypes.string
+  modifiers: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array]),
+  title: React.PropTypes.string,
+  text: React.PropTypes.string
 };
 
-Card.defaultProps = {
-
-};
+Card.defaultProps = {};
 
 export default Card;

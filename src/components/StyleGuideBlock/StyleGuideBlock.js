@@ -1,5 +1,5 @@
 require('./StyleGuideBlock.scss');
-require('highlight.js/styles/agate.css');
+require('highlight.js/styles/github.css');
 var hljs = require('highlight.js/lib/highlight.js');
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 
@@ -29,18 +29,20 @@ class StyleGuideBlock extends React.Component {
   }
 
   renderComponent() {
-    let componentVariations = [
-      <div className="style-guide-block__display" key="component-base">
-        <h3>Example</h3>
+    const baseComponent = (
+      <div className="style-guide-block__display">
+        <h3>Base example</h3>
         {this.props.children}
       </div>
-    ];
+    );
+
+    let componentVariations = [];
 
     if (this.props.modifiers) {
       this.props.modifiers.map((modifier, i) => {
         return componentVariations.push(
           <div className="style-guide-block__display" key={`component-${i}`}>
-            <h3><span className="style-guide-block__modifier">{`Modifier: ${modifier}`}</span></h3>
+            <h3>Modifiers: <span className="style-guide-block__modifiers">{modifier}</span></h3>
             {React.Children.map(this.props.children, (child) => {
               return React.cloneElement(child, {...this.props, modifier});
             })}
@@ -49,7 +51,13 @@ class StyleGuideBlock extends React.Component {
       })
     }
 
-    return componentVariations;
+    return (
+      <div>
+        {baseComponent}
+        {this.renderComponentSource()}
+        {componentVariations}
+      </div>
+    );
   }
 
   renderComponentSource() {
@@ -62,8 +70,10 @@ class StyleGuideBlock extends React.Component {
     return (
       <div className="style-guide-block__source">
         <h3>Source (React JSX)</h3>
-        <pre className="hljs">
-          {children}
+        <pre>
+          <code className="hljs">
+            {children}
+          </code>
         </pre>
 
         <h3>Source (HTML)</h3>
@@ -84,14 +94,13 @@ class StyleGuideBlock extends React.Component {
       <div className="style-guide-block">
         {this.renderComponentDescription()}
         {this.renderComponent()}
-        {this.renderComponentSource()}
       </div>
     );
   }
 }
 
 StyleGuideBlock.propTypes = {
-  modifierClass: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array]),
+  modifiers: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array]),
   highlighter: React.PropTypes.func
 };
 

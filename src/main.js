@@ -11,11 +11,21 @@ import StyleGuideBlock from './components/StyleGuideBlock/StyleGuideBlock';
 // `modifiers` is a list of BEM classes that modify the base component
 const components = [
   {
+    component: require('./components/Button/Button'),
+    name: 'Button',
+    description: require('./components/Button/README.md'),
+    props: {
+      text: "Button"
+    },
+    modifiers: ['button--secondary button--medium']
+  },
+  {
     component: require('./components/Card/Card'),
     name: 'Card',
     description: require('./components/Card/README.md'),
     props: {
-      title: "Card title"
+      title: "Card title",
+      text: "I am a very simple card."
     },
     modifiers: []
   }

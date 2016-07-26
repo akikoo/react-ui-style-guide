@@ -1,0 +1,44 @@
+.button {
+  border-radius: 3px;
+  display: inline-block;
+  transition-property: background;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  outline: none; // Make sure to add focus styles below
+  vertical-align: middle;
+  font-weight: bold;
+  border: none;
+
+  // Size modifiers
+  &--small {
+    font-size: 1em;
+    padding: 6px 20px;
+  }
+
+  &--medium {
+    font-size: 1.1em;
+    padding: 10px 20px;
+  }
+
+  // Primary button
+  &--primary {
+    color: #fff;
+    background: #16c98d;
+
+    &:hover,
+    &:focus {
+      background: darken(#16c98d, 5%);
+    }
+  }
+
+  // Secondary button
+  &--secondary {
+    color: grey;
+    background: #eee;
+
+    &:hover,
+    &:focus {
+      background: darken(#eee, 5%);
+    }
+  }
+}

@@ -1,17 +1,18 @@
 ## Card
 
-Renders card
-
-### Usage
-
-```javascript
-import Card from './src/components/Card/Card';
-```
+Cards are used for grouping related information together.
 
 ### Props
 
 ```javascript
 {
-  title: "Card title"
+  title: "string",
+  text: "string"
 }
+```
+
+### Usage
+
+```javascript
+import Card from './src/components/Card/Card';
 ```

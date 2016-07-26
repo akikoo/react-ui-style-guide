@@ -1,16 +1,39 @@
-html,
-body {
-  height: 100%;
-  overflow-y: hidden;
-}
-
 body {
   font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
-.l-app {
-  height: 100%;
-  overflow-y: auto;
+.style-guide__components {
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 48em) {
+  html,
+  body {
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .l-app {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .style-guide__nav {
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .style-guide__components {
+    margin: 40px 0 20px 25%;
+    overflow-x: hidden;
+  }
 }
 
 h1 {
@@ -25,15 +48,6 @@ h2 {
 
 .style-guide {
   &__nav {
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     padding: 20px 10px 0;
     margin: 0;
     background: #fff;
@@ -60,10 +74,5 @@ h2 {
 
   &__nav-link:hover {
     background: #f2f2f2;
-  }
-
-  &__components {
-    margin: 40px 0 0 300px;
-    overflow-x: hidden;
   }
 }
