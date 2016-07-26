@@ -1,8 +1,8 @@
 # React UI Style Guide
 
-Living Style Guide with React, webpack, ES6 and Sass. 
+Living Style Guide with React, webpack, ES6 and Sass.
 
-## Environment setup 
+## Environment setup
 
 ```sh
   $ npm install
@@ -17,3 +17,19 @@ Start the Webpack server (includes live reloading when you change files):
 ```
 
 Open [http://localhost:3001](http://localhost:3001) in a browser. `./src/main.js` is the entry point.
+
+## Add new components to style guide
+
+Define each component you want to include in your style guide `components` array in `./src/main.js`, like so:
+
+	const components = [
+		{
+    		component: require('./components/Card/Card'),
+    		name: 'Card',
+    		description: require('./components/Card/README.md'),
+    		props: {
+      			title: "Card title"
+    		},
+    		modifiers: []
+  		}
+	];

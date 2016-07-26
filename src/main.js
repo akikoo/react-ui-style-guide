@@ -7,6 +7,8 @@ import ReactDOM from 'react-dom';
 
 import StyleGuideBlock from './components/StyleGuideBlock/StyleGuideBlock';
 
+// Define your components in this array
+// `modifiers` is a list of BEM classes that modify the base component
 const components = [
   {
     component: require('./components/Card/Card'),
@@ -27,6 +29,7 @@ class MainComponent extends React.Component {
   }
 
   setInitialState() {
+    // This is used for rendering one active component at a time
     const initialState = components.reduce((result, value) => {
       result[value.name] = false;
 
@@ -36,11 +39,11 @@ class MainComponent extends React.Component {
     return initialState;
   }
 
-  handleClick(component, e) {
+  handleClick(componentName, e) {
     e.preventDefault();
 
     let newState = this.setInitialState();
-    newState[component] = true;
+    newState[componentName] = true;
 
     this.setState(newState);
   }
@@ -50,6 +53,7 @@ class MainComponent extends React.Component {
       <div className="style-guide">
         <div className="style-guide__nav">
           <h2>Components</h2>
+
           <ul className="style-guide__list">
             {components.map((component, i) => {
               return (
@@ -68,7 +72,7 @@ class MainComponent extends React.Component {
         </div>
         <div className="style-guide__components">
           <h1>Style Guide with React</h1>
-          <p>Use the menu to see the components.</p>
+          <p>Use the menu to see each component.</p>
 
           {components.map((Component, i) => {
             if (!this.state[Component.name]) {
