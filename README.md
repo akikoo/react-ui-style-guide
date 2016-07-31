@@ -36,3 +36,10 @@ const components = [
   }
 ];
 ```
+
+## Similar projects
+
+- [react-styleguide-generator](https://github.com/pocotan001/react-styleguide-generator)
+- [react-styleguidist](https://github.com/sapegin/react-styleguidist)
+- [react-style-guide](https://github.com/alexlande/react-style-guide)
+- [react-styleguide](https://github.com/jmfurlott/react-styleguide)
